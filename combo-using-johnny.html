@@ -1,0 +1,352 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>Online HTML Editor: Real time online with preview</title>
+
+      <link href="http://johnny.github.com/jquery-sortable/css/vendor.css" rel="stylesheet">
+
+    <link href="http://johnny.github.com/jquery-sortable/css/application.css" rel="stylesheet">
+
+	<!--script src="./sidebyside_files/jquery.min.js"></script>
+  <script src="./sidebyside_files/js_quicktags.js" type="text/javascript"></script-->
+  <style type="text/css">
+
+input[type=text] {
+  width: 110px;
+  /*font-family: courier;*/
+}
+
+input[type=url] { width: 150px;}
+textarea {width: 180px;}
+
+#elements-menu {
+  width: 250px;
+  display: block;
+  padding: 10px;
+}
+
+#html-dnd-workspace {
+  width: 345px;
+  display: block;
+}
+
+textarea#canvas {
+  margin-top:5px;
+  margin-bottom: 0px;
+  padding:10px;
+  border:1px dashed gray;
+  background-color:#fafafa;
+  height:450px; /* 500px */
+  width:200px; /* 48% */
+}
+
+iframe {
+  margin-top:20px;
+  margin-bottom:20px;
+  width:250px; /* 47% */
+  height:500px; /* 500px */
+  /*float: right;*/
+  margin: 20px;
+}
+
+/*ol li.highlight {background: #ccc;}*/
+
+.user-input {background-color: white;}
+h1 {margin-top:-5px;font-size:20px;}
+
+p {font-size:12px;}
+
+body {margin:20px;font-family:verdana;}
+
+
+
+input {margin-right: 7px;border:1px solid #aaa;margin-top:5px;font-size:13px;}
+
+.simple_with_no_drop {width: 275px;}
+
+  </style>
+
+<script type="text/javascript">
+var old = '';
+function update()
+{
+  var textarea = document.f.ta;
+  var d = parent.dynamicframe.document; 
+  if (old != textarea.value)
+  {
+    old = textarea.value;
+    d.open();
+    d.write(old);
+    d.close();
+  }
+  window.setTimeout(update, 150);
+}
+
+</script>
+
+<!--script>
+
+var input = document.getElementsByTagName('input')[0];
+
+input.onkeypress = input.onkeydown = function() {
+    this.size = ( this.value.length > 10 ) ? this.value.length : 10;
+};
+
+</script-->
+
+</head>
+
+<body onload="update(); document.f.ta.select();">
+
+
+
+  <div class=""> <!-- bootstrap-container-->
+
+
+<div id="examples">
+
+  <h2>Sort handle and limited drag/drop</h2>
+
+  <div class="row">
+    
+  <div id="handle">
+    
+
+<div class="row">
+  
+<div class="span4" id="elements-menu"><!--span4-->
+    <h3>Drag from this menu</h3>
+    <ol class="simple_with_no_drop vertical">
+      <li class="highlight">
+          <i class="icon-move"></i>
+          Item 1
+        </li>
+
+        <li class="">
+              <i class="icon-move"></i> &lt;h1&gt;<input type="text" placeholder="Heading 1 text"> &lt;/h1&gt;
+        </li>
+
+        <li class="">
+              <i class="icon-move"></i> &lt;h2&gt;<input type="text" placeholder="Heading 2 text">&lt;/h2&gt;
+        </li>
+
+        <li class="">
+          <i class="icon-move"></i>
+          &lt;p&gt; <br/>
+          <textarea> </textarea>
+          <br/>
+          &lt;/p&gt;
+        </li>
+
+        <li class="">
+              <i class="icon-move"></i> &lt;a <br/>
+              href="<input type="url" placeholder="Copy a URL">"&gt; 
+              <br/>
+              <input type="text" placeholder="Enter link text">&lt;/a&gt;
+        </li>
+
+        <li class="">
+          <i class="icon-move"></i> &lt;br /&gt;
+        </li>
+
+        <li class="">
+          <i class="icon-move"></i> &lt;!-- <input type="text" placeholder="Comment text">--&gt;
+        </li>
+
+        <li class="">
+          <i class="icon-move"></i> &lt;div&gt;
+          <ol>
+          </ol>
+          &lt;/div&gt;
+        </li>
+      
+
+
+
+
+
+
+
+    </ol>
+  </div>
+
+
+
+  <div class="span4" id="html-dnd-workspace"><!--span4-->
+    <h3>Drag and drop to rearrange</h3>
+    <ol class="simple_with_drop default vertical">
+        <!--li>
+          <!--i class="icon-move"></i-- &lt;head&gt;
+          <!--ol>
+            <li>
+              <!--i class="icon-move"></i-- 
+              &lt;title&gt;
+              <input type="text" placeholder="Web page title">
+              &lt;/title&gt;
+            </li>
+
+            <li>
+              <!--i class="icon-move"></i--
+              &lt;style&gt;
+              <textarea rows="3" cols="50"> body {background-color: #B2FFFF;}
+              </textarea>
+              &lt;/style&gt;
+            </li>
+
+          </ol>
+          &lt;/head&gt;
+        </li> -->
+
+        <li style="" class="">
+          <!--i class="icon-move"></i--> &lt;body&gt;
+          <ol>
+            <li>
+              <!--i class="icon-move"></i-->
+              &lt;style&gt;<br/>
+              <textarea rows="3" cols="50">body {background-color: #B2FFFF;} div {color: red; background-color:white;} 
+              </textarea>
+              <br/>
+              &lt;/style&gt;
+            </li>
+
+            <li class="">
+              <i class="icon-move"></i> &lt;h2&gt;<input type="text" placeholder="Heading 2 text" value="Hello there!">&lt;/h2&gt;
+            </li>
+
+            <li>
+              <i class="icon-move"></i>
+              &lt;p&gt;<br/>
+              <textarea>This is an example paragraph with some boring text. </textarea>
+              <br/>
+              &lt;/p&gt;
+            </li>
+
+            <li class="">
+              <i class="icon-move"></i> &lt;!-- <input type="text" placeholder="Comment text" value="This is a comment"> --&gt;
+            </li>
+            
+
+
+            <li>
+              <i class="icon-move"></i> &lt;div&gt;
+              <ol>
+
+              <li>
+                <i class="icon-move"></i> &lt;h3&gt;<input type="text" placeholder="Heading 3 text" value="Some H3 text!">&lt;/h3&gt;
+              </li>
+
+              <li>
+              <i class="icon-move"></i> &lt;ul&gt;
+              <ol>
+                <li class="">
+                  <i class="icon-move"></i> &lt;li&gt;<input type="text" placeholder="List item" value="Apples"> &lt;/li&gt;
+                </li>
+                <li>
+                  <i class="icon-move"></i> &lt;li&gt;<input type="text" placeholder="List item" value="Oranges"> &lt;/li&gt;
+                </li>
+                <li> 
+                  <i class="icon-move"></i> &lt;li&gt;<input type="text" placeholder="List item" value="Pears"> &lt;/li&gt;
+                </li>
+              </ol>
+              &lt;/ul&gt;
+            </li>
+          </ol>
+              &lt;/div&gt;
+              </li>
+            
+            
+          &lt;/body&gt;
+        </li>
+
+
+        <!--li>
+          <i class="icon-move"></i>
+          <span class="user-input" contenteditable="true"> This uses an editable span instead </span>
+          <ol></ol>
+        </li>
+
+        <!--
+        <li>
+          <i class="icon-move"></i>
+          Item 3
+        </li>
+        <li>
+          <i class="icon-move"></i>
+          Item 4
+        </li>
+        <li>
+          <i class="icon-move"></i>
+          Item 5
+        </li>
+        <li>
+          <i class="icon-move"></i>
+          Item 6
+        </li> -->
+    </ol>
+
+
+
+
+  </div>
+
+<div class="span3">
+  <h3>HTML source code</h3>
+<form name="f" method="post" target="dynamicframe">
+
+<!--script type="text/javascript">edToolbar('canvas');</script-->
+
+<textarea id="canvas" name="ta" rows="10" cols="140">
+
+&lt;style type="text/css"&gt;
+body {background-color: #B2FFFF;}
+div {color: red; background-color:white;}
+&lt;/style&gt;
+
+  &lt;h2&gt;Hello there!&lt;/h2&gt;
+&lt;p&gt;This is an example paragraph with some boring text.&lt;/p&gt;
+
+<!-- This is a comment -->
+
+&lt;div&gt;
+
+&lt;h3&gt;Some H3 text!&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Apples&lt;/li&gt;
+  &lt;li&gt;Oranges&lt;/li&gt;
+  &lt;li&gt;Pears&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+</textarea>
+
+
+
+</form>
+</div>
+
+<h3>Web page output</h3>
+<iframe name="dynamicframe" id="dynamicframe" src="javascript:'-'"></iframe>
+      
+  
+</div>
+  </div>
+
+  </div>
+  
+
+    </div>
+    <script src="http://johnny.github.com/jquery-sortable/js/application.js"></script>
+
+
+
+
+
+
+
+<!--<sfmsg id="sfMsgId" data="{&quot;imageCount&quot;:0,&quot;ip&quot;:&quot;1.1.1.1&quot;}"></sfmsg>-->
+</body></html>
