@@ -13,11 +13,9 @@
 
     <script type="text/javascript" src="http://jscolor.com/jscolor/jscolor.js"></script>
 
-      <script src="http://johnny.github.com/jquery-sortable/js/application.js"></script>
+      <script src="johnny-application.js"></script>
 
 
-	<!--script src="./sidebyside_files/jquery.min.js"></script>
-  <script src="./sidebyside_files/js_quicktags.js" type="text/javascript"></script-->
   <style type="text/css">
 
 input[type=text] {
@@ -171,18 +169,6 @@ input {margin-right: 7px;border:1px solid #aaa;margin-top:5px;font-size:13px;}
 var old = '';
 function update()
 {
-  /*var textarea = document.f.ta;
-  var d = parent.dynamicframe.document; 
-  if (old != textarea.value)
-  {
-    old = textarea.value;
-    d.open();
-    d.write(old);
-    d.close();
-  }
-  window.setTimeout(update, 150);
-  */
-
   var textarea = document.f.ta;
   var d = parent.dynamicframe.document; 
   if (old != textarea.value)
@@ -192,8 +178,7 @@ function update()
     d.write(old);
     d.close();
   }
-  window.setTimeout(update, 150);
-  
+  window.setTimeout(update, 150); 
 }
 
 
@@ -262,11 +247,11 @@ input.onkeypress = input.onkeydown = function() {
         </li>
 
         <li class="">
-              <i class="icon-move"></i> &lt;h1&gt;<span class="heading" placeholder="Heading 1 text"></span> &lt;/h1&gt;
+              <i class="icon-move"></i> &lt;h1&gt;<textarea class="heading" placeholder="Heading 1 text"></textarea> &lt;/h1&gt;
         </li>
 
         <li class="">
-              <i class="icon-move"></i> &lt;h2&gt;<span class="heading" placeholder="Heading 2 text"></span>&lt;/h2&gt;
+              <i class="icon-move"></i> &lt;h2&gt;<textarea class="heading" placeholder="Heading 2 text"></textarea>&lt;/h2&gt;
         </li>
 
         <li class="">

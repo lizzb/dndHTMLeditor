@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Drag and Drop HTML Editor</title>
+
+    <link href="http://johnny.github.com/jquery-sortable/css/vendor.css" rel="stylesheet">
+    <link href="http://johnny.github.com/jquery-sortable/css/application.css" rel="stylesheet">
+  
+  <script src="http://johnny.github.com/jquery-sortable/js/application.js"></script>
+  <script src="http://johnny.github.com/jquery-sortable/js/jquery-sortable-min.js"></script>
+
+  <script type="text/javascript" src="http://jscolor.com/jscolor/jscolor.js"></script>
+
+
+<style>
+ol li.highlight {
+  background: lightcyan;
+  color: black;
+}
+
+ol li.highlight i.icon-move
+{
+  background-image: url("http://johnny.github.com/jquery-sortable/img/glyphicons-halflings.png");
+}
+
+/* Different types of contenteditable spans */
+span { 
+  background-color: white;
+  padding: 2px;
+}
+
+.heading {width: 50px;}
+
+.user-input {padding-left: 4px; padding-right: 4px;}
+
+input.color {width: 50px;}
+
+.css-el, .css-att {}
+
+.link {}
+
+.li {}
+
+.comment {}
+
+.p {height: 100px;}
+
+textarea#serialize_output {
+  margin-top:5px;
+  margin-bottom: 0px;
+  padding:10px;
+  border:1px dashed gray;
+  background-color:#fafafa;
+  height:450px; /* 500px */
+  width:200px; /* 48% */
+}
+
+iframe {
+  margin-top:20px;
+  margin-bottom:20px;
+  width:250px; /* 47% */
+  height:500px; /* 500px */
+  /*float: right;*/
+  margin: 20px;
+}
+
+#serialize_output {width: 300px;}
+
+.simple_with_no_drop {width: 275px;}
+
+
+</style>
+
+
+
+<script type="text/javascript">
+var old = '';
+function update()
+{
+  var textarea = document.f.ta;
+  var d = parent.dynamicpagepreview.document; 
+  if (old != textarea.value)
+  {
+    old = textarea.value;
+    d.open();
+    d.write(old);
+    d.close();
+  }
+  window.setTimeout(update, 150);
+}
+</script>
+
+
+</head>
+<body class="" onload="update(); document.f.ta.select();">
+    
+<div class="bootstrap-container">
+      
+<div id="examples">
+  <div class="page-header">
+    <h1>Examples</h1>
+  </div>
+
+  <div id="handle">
+
+    <h2>Sort handle and limited drag/drop</h2>
+
+<div class="row">
+
+
+  <div class="span4">
+    <h3>I'm only draggable (I clone) </h3>
+    
+    <ol class="simple_with_no_drop vertical">
+
+        <li class="">
+              <i class="icon-move"></i> &lt;h1&gt;<span contenteditable class="user-input heading">Heading 1 text</span>&lt;/h1&gt;
+        </li>
+
+        <li class="">
+              <i class="icon-move"></i> &lt;h2&gt;<span contenteditable class="user-input heading">Heading 2 text</span>&lt;/h2&gt;
+        </li>
+
+        <li class="">
+          <i class="icon-move"></i>
+          &lt;p&gt;
+          <ol>
+            <li class="">
+              <i class="icon-move"></i><span contenteditable class="user-input p text">Write some paragraph text here...</span>
+            </li>
+          </ol>
+          &lt;/p&gt;
+        </li>
+
+        <li class="">
+              <i class="icon-move"></i> &lt;a href="<span contenteditable class="user-input">Copy a URL here</span>"&gt; 
+              <br/>
+              <span contenteditable class="user-input link">Link text</span>&lt;/a&gt;
+        </li>
+
+        <li class="">
+          <i class="icon-move"></i> &lt;br /&gt;
+        </li>
+
+        <li class="">
+          <i class="icon-move"></i> &lt;!-- <span contenteditable class="user-input comment">Comment</span> --&gt;
+        </li>
+
+        <li class="">
+          <i class="icon-move"></i> &lt;div&gt;
+          <ol></ol>
+          &lt;/div&gt;
+        </li>
+        
+
+
+
+    </ol>
+
+    <!-- ---------- CSS MENU to drag from ---------- -->
+
+    <h3>I'm only draggable (I clone) </h3>
+    
+    <ol class="simple_with_no_drop vertical">
+      
+      <li class="highlight css-el">
+          <i class="icon-move"></i>body {
+          <ol></ol>
+          <br/>
+        }
+        </li>
+
+        <li class="highlight css-att">
+            <i class="icon-move"></i> color: <input class="color" value="66FF00">
+        </li>
+
+        <li class="highlight css-att">
+            <i class="icon-move"></i> background-color: <input class="color" value="66FF00">
+        </li>
+    </ol>
+
+    <!-- ---------- Potential trash can ---------- -->
+
+    <h3>I'm only droppable (trash can?)</h3>
+    <ol class="simple_with_no_drag vertical">
+      <li>
+          <i class="icon-move"></i>
+          <span contenteditable="true">Item 1</span>
+        </li>
+        <li>
+          <i class="icon-move"></i>
+          Item 2
+        </li>
+        <li>
+          <i class="icon-move"></i>
+          Item 3
+        </li>
+    </ol>
+  </div>
+
+
+<!-- ---------- HTML DRAG AND DROP WORKSPACE ---------- -->
+
+  <div class="span4" id="html-dnd-workspace"><!--span4-->
+
+    <h3>I'm draggable and droppable</h3>
+    
+    <ol id="workspace" class="simple_with_drop vertical">
+      
+
+  <li style="" class="">
+          <!--i class="icon-move"></i--> &lt;body&gt;
+          <ol>
+            <li>
+              <!--i class="icon-move"></i-->
+              &lt;style&gt;
+              <!--<br/>
+              <textarea rows="3" cols="50">body {background-color: #B2FFFF;} div {color: red; background-color:white;} 
+              </textarea>
+              <br/>-->
+              <ol>
+
+                <li class="highlight css-el">
+                  <i class="icon-move"></i>body {
+                  <ol>
+                  <li class="highlight css-att">
+                      <i class="icon-move"></i> background-color: <span contenteditable class="user-input color">#B2FFFF</span><!--<input class="color" value="66FF00">-->
+                  </li>
+                  </ol>
+                  }
+                  </li>
+
+                  <li class="highlight css-el">
+                  <i class="icon-move"></i>div {
+                  <ol>
+                    <li class="highlight css-att">
+                      <i class="icon-move"></i> color: <span contenteditable class="user-input color">rgb(255,0,0)</span>;
+                      <!--<input class="color" value="66FF00">-->
+                  </li>
+
+                  <li class="highlight css-att">
+                      <i class="icon-move"></i> background-color: <span contenteditable class="user-input color">white</span>;
+                      <!--<input class="color" value="66FF00">-->
+                  </li>
+                  </ol>
+                  }
+                  </li>
+
+        
+
+        
+
+
+
+              </ol>
+
+              &lt;/style&gt;
+            </li>
+
+            <li class="">
+              <i class="icon-move"></i> &lt;h2&gt;<span contenteditable class="user-input heading">Hello there!</span>&lt;/h2&gt;
+            </li>
+
+            <li class="">
+              <i class="icon-move"></i>
+              &lt;p&gt;
+              <ol>
+                <li class="">
+                  <i class="icon-move"></i><span contenteditable class="user-input p text">This is an example paragraph with some boring text. But here is a link to </span>
+                </li>
+
+                <li class="">
+                  <i class="icon-move"></i> &lt;a href="<span contenteditable class="user-input">http://www.google.com</span>" target="blank" &gt; 
+                  <br/>
+                  <span contenteditable class="user-input link">Google</span>&lt;/a&gt;
+                </li>
+
+                <li class="">
+                  <i class="icon-move"></i><span contenteditable class="user-input p text">, if you are interested. </span>
+                </li>
+
+              </ol>
+              &lt;/p&gt;
+            </li>
+
+            <li class="">
+              <i class="icon-move"></i> &lt;!-- <span contenteditable class="user-input comment">This is a comment. It won't show up in the web page display.</span> --&gt;
+            </li>
+
+            <li>
+              <i class="icon-move"></i> &lt;div&gt;
+              <ol>
+
+              <li>
+                <i class="icon-move"></i> &lt;h3&gt;<span contenteditable class="user-input heading">Some H3 text!</span>&lt;/h3&gt;
+              </li>
+
+              <li>
+              <i class="icon-move"></i> &lt;ul&gt;
+              <ol>
+                <li class="">
+                  <i class="icon-move"></i> &lt;li&gt; <span contenteditable class="user-input li"> Apples </span>&lt;/li&gt;
+                  <!--ol></ol-->
+                </li>
+                <li class="">
+                  <i class="icon-move"></i> &lt;li&gt;<span contenteditable class="user-input li"> Oranges </span>
+                  <!--ol></ol-->
+                  &lt;/li&gt;
+                </li>
+                <li> 
+                  <i class="icon-move"></i> &lt;li&gt;<span contenteditable class="user-input li"> Pears </span>
+                  <!--ol></ol-->
+                  &lt;/li&gt;
+                </li>
+              </ol>
+              &lt;/ul&gt;
+            </li>
+          </ol>
+              &lt;/div&gt;
+              </li>
+            
+            </ol>
+          &lt;/body&gt;
+        </li>
+    </ol>
+
+    <!-- ---------- HTML SOURCE CODE ---------- -->
+
+   <!--<div id='html-source-code' class="span3"><!--span4-->
+
+   <!--<h3>Serialize result</h3>
+    <pre id="serialize_output2">Item 1,Item 2,Item 6,Item 4
+Item 1,Item 3,Item 3,Item 4,Item 2,Item 5,Item 5,Item 6</pre>-->
+
+    <h3>HTML source code</h3>
+
+    <form name="f" method="post" target="dynamicpagepreview">
+      <textarea id="serialize_output" name="ta" rows="10" cols="140"> </textarea>
+    </form>
+
+
+  </div> <!--end html-dnd-workspace -->
+  
+    <!-- ---------- WEB PAGE OUTPUT ---------- -->
+
+<h3>Web page output</h3>
+<iframe name="dynamicpagepreview" id="dynamicpagepreview" src="javascript:'-'"></iframe>
+
+</div>
+
+
+
+
+</div>
+  
+
+
+
+<footer class="footer">
+  <p>Created by
+  <a href="https://github.com/johnny">Jonas von Andrian</a>.</p>
+  
+  <p>Built with <a href="http://twitter.github.com/bootstrap/">Bootstrap</a>.
+  Icons from <a href="http://glyphicons.com/">Glyphicons Free</a>.</p>
+</footer>
+    </div>
+
+
+    <!-- weird clicking functionality, only sees changes from span contenteditables... but DOES drag from clone to menu
+    only updates when you MOVE something -->
+    
+      <script>
+
+//var group = $("ol.limited_drop_targets").sortable({
+//  group: 'limited_drop_targets',
+var group = $("ol.simple_with_drop").sortable({
+//var group = $("#workspace").sortable({
+    group:  'no-drop', //'simple_with_drop',
+    handle: 'i.icon-move', //uncomment to make only grabbable at icon - if you uncomment clickable spans dont work so well
+  onDragStart: function (item, container, _super) {
+    // Duplicate items of the no drop area
+    if(!container.options.drop)
+      item.clone().insertAfter(item)
+    _super(item)
+  },
+  /*isValidTarget: function  (item, container) {
+    if(item.is(".highlight"))
+      return true
+    else {
+      return item.parent("ol")[0] == container.el[0]
+    }
+  },*/
+  onDrop: function (item, container, _super) {
+    $('#serialize_output').text(group.sortable("serialize").get().join(""))
+    _super(item, container)
+  },
+  serialize: function (parent, children, isContainer) {
+    return isContainer ? children.join() : parent.text()
+  }
+})
+
+$("ol.simple_with_no_drag").sortable({
+  group: 'no-drop',
+  drag: false,
+  onDrop: function (item, container, _super) {
+  // DELETE THE ITEM ....???
+  item.dispose()
+}
+})
+
+
+  </script>
+  
+
+</body></html>

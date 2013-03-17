@@ -1,38 +1,93 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf340
+{\rtf1\ansi\ansicpg1252\cocoartf1187\cocoasubrtf370
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 \margl1440\margr1440\vieww10800\viewh8400\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
-\f0\fs24 \cf0 Things to fix/figure out JUST in the html editor\
+\f0\fs24 \cf0 Need to figure out:\
+\
+- jscolor modify to work in contenteditable spans!!! (or another color editor\'85.)\
+\
+- how to detect if content edited in span? trigger event?\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 How to call serialize not just ondrop (current functionality),
+\b0 \
+- but also onload\
+- and if content is edited\
+\
+\
+inline css\
+could automatically change tags from\
+<h1> \'85 </h1> to \
+<h1 style=""> \'85 </h1>\
+\
+then in phase 2, this would instead be\
+\
+<h1 class="" id=""> \'85 </h1>\
+\
+maybe phase 1 is boring, no styling\
+phase 2 has styling\
+phase 3 is transition to css\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 \ul \ulc0 \
+Features to consider/prioritize
+\b0 \ulnone \
+- html5 local saving!!\
+\
+- tooltips - on hover over the tag name for more info? on hover over an attribute for possible values?\
+\
+- scrolling menu\
+- sortable menu\
+- trash can that actually makes things disappear\
+\
+- disable ability to edit the generated html source code (since can't have reverse functionality, generating code blocks from written html)\
 \
 
-\b - why you can no longer drag and drop!!!\
+\b \ul Think about\'85.
+\b0 \ulnone \
 \
-- problem: need to figure out how to serialize the drag and drop html editor without using limited class targets\
-- pretty sure that limited drop targets prevents some of the drag/drop/nest functionality\
+how can you successfully do layouts in such a small preview window?\
+should they be resizeable?? maybe take up half of the page? be able to condense the other stuff?\
+\
+\
+css attributes - should just list them all, regardless of if supported or not?\
+include tooltip for which ones supported? \
+automatically generate empty list of all possible attributes? (would be really long)\
+\
+\
+\
+--------------------------------------------------------------------------------------------------\
+\
+Things to fix/figure out JUST in the html editor\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\b \cf0 \strike \strikec0 - why you can no longer drag and drop!!!\strike0\striked0 \
+\
+\strike \strikec0 - problem: need to figure out how to serialize the drag and drop html editor without using limited class targets\strike0\striked0 \
+\strike \strikec0 - pretty sure that limited drop targets prevents some of the drag/drop/nest functionality\
 - if i add the class limited drop targets, can no longer edit the content of the draggable items\
-- however, cannot figure out how to serialize the output of a class other than limited drop targets\
+- however, cannot figure out how to serialize the output of a class other than limited drop targets\strike0\striked0 \
 \
-- why you can no longer click to edit things in the dnd workspace!!\
+\strike \strikec0 - why you can no longer click to edit things in the dnd workspace!!\strike0\striked0 \
 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
-\b0 - click to edit in corner, which provides options for adding attributes - modal dialog box? bootstrap?\
-- make paragraphs ols, because don't know a better way to incorporate dragging in bold, italic, links\'85 etc\
+\b0 \cf0 - click to edit in corner, which provides options for adding attributes - modal dialog box? bootstrap?\
+\strike \strikec0 - make paragraphs ols, because don't know a better way to incorporate dragging in bold, italic, links\'85 etc [ done ] \strike0\striked0 \
 \
 - TOOLTIPS\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
-\cf0 - automatically generate source code on page load (without requiring an ondrop first)\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
-\cf0 \
+- automatically generate source code on page load (without requiring an ondrop first)\
+\
 - better css of textareas, or possibly using span contenteditable?\
 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
-\cf0 - tabbed content ---> display drag and drop and html source code as 2 tabs to choose from\
+- tabbed content ---> display drag and drop and html source code as 2 tabs to choose from\
 \
 - possibly get rid of overall "body" tag so that more horizontal space?\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
-\cf0 - using user interface to resemble that of the other guy (rather than the red arrows)\
+- using user interface to resemble that of the other guy (rather than the red arrows)\
 \
 \
 \
