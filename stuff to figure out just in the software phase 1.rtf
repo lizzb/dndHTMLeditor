@@ -4,14 +4,48 @@
 \margl1440\margr1440\vieww10800\viewh8400\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
-\f0\fs24 \cf0 Need to figure out:\
+\f0\b\fs24 \cf0 limited drop target - only be able to put css stuff in css stuff??\
+\
+\
+\
+Possible questions to address:
+\b0 \
+
+\b why isnt this attribute working?
+\b0 \
+--> some attributes for specific elements, others not,\
+this is what can lead to using alternative stuff (bootstrap buttons instead of button input)\
+alternatively, no browser support, html 5 still developing\
+\
+\
+Sharing with others, being able to play with others web layouts\'85. if i had time to do backwards working, this could be a possibility (generating the blocks from the html code, in addition to generating html code from the blocks), but i dont think this is possible\
+--> could introduce the concept of "view source" or "inspect element"\
+\
+
+\b I see a color/font/layout/picture on another site that i want to use!
+\b0 \
+--> could introduce the concept of "view source" or "inspect element".. in fact, you can do this for any website! \'85 choose a favorite website, see what tags you can find that you recognize\
+not unusual in web design to first look for free/open source layotus you like, and then try to modify them to your taste\
+in order to do this, need a good understanding of html/css\
+- potentially introduce bootstrap? understand css incorporation, even if only on one page (could help alleviate the fact that it is easier to understand the point css when you have multiple pages, which my thing doesnt really support\
+\
+
+\b why can't my friend see the website i made on my computer?
+\b0 \
+- hosting stuff, be vague\
+\
+\
+\
+\
+Need to figure out:\
 \
 - jscolor modify to work in contenteditable spans!!! (or another color editor\'85.)\
 \
+- possible to get values of select elements? (for css attributes)\
+\
 - how to detect if content edited in span? trigger event?\
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
-\b \cf0 How to call serialize not just ondrop (current functionality),
+\b How to call serialize not just ondrop (current functionality),
 \b0 \
 - but also onload\
 - and if content is edited\
@@ -77,7 +111,8 @@ Things to fix/figure out JUST in the html editor\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
 
 \b0 \cf0 - click to edit in corner, which provides options for adding attributes - modal dialog box? bootstrap?\
-\strike \strikec0 - make paragraphs ols, because don't know a better way to incorporate dragging in bold, italic, links\'85 etc [ done ] \strike0\striked0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+\cf0 \strike \strikec0 - make paragraphs ols, because don't know a better way to incorporate dragging in bold, italic, links\'85 etc [ done ] \strike0\striked0 \
 \
 - TOOLTIPS\
 - automatically generate source code on page load (without requiring an ondrop first)\
