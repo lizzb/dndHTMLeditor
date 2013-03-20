@@ -111,13 +111,6 @@ function update()
   }
   window.setTimeout(update, 150);
 }
-
-/* if a contenteditable user-input class is changed,
-trigger the onDrop function for the draganddrop editor,
-which updates the generated sourcecode */
-
-
-
 </script>
 
 
@@ -422,7 +415,7 @@ which updates the generated sourcecode */
   <div id="html-dnd-workspace"><!--span4--> <!--class="span5"-->
 
     <h3>I'm draggable and droppable</h3>
-    
+
     <ol id="workspace" class="simple_with_drop vertical">
       
 
@@ -442,31 +435,8 @@ which updates the generated sourcecode */
                   <i class="icon-move"></i>body {
                   <ol>
                   <li class="highlight css-att">
-                      <i class="icon-move"></i> background-color: <!--<span contenteditable class="user-input color">#B2FFFF</span>;<!--<input class="color" value="66FF00">-->
-
-                      <input class="color" name="colorinput" value="66FF00">;
-
+                      <i class="icon-move"></i> color: <span contenteditable="" class="user-input color">#9D41C4</span>;<!--<input class="color" value="66FF00">-->
                   </li>
-
-                  <li class="highlight css-att">
-                    <i class="icon-move"></i> font-family:"
-                    <select class="fontfam">
-                      <option value="Arial">Arial</option>
-                      <option value="Helvetica">Helvetica</option>
-                      <option value="Arial Black">Arial Black</option>
-                      <option value="Tahoma">Tahoma</option>
-                      <option value="Verdana">Verdana</option>
-                      <option value="Times New Roman">Times New Roman</option>
-                      <option value="Georgia">Georgia</option>
-                      <option value="Palatino Linotype" selected>Palatino Linotype</option>
-                      <option value="Book Antiqua">Book Antiqua</option>
-                      <option value="Impact">Impact</option>
-                      <option value="Courier New">Courier New</option>
-                      <option value="Lucida Console">Lucida Console</option>
-                      <option value="Lucida Sans Unicode">Lucida Sans Unicode</option>
-                    </select>";
-                </li>
-
                   </ol>
                   }
                   </li>
@@ -474,24 +444,74 @@ which updates the generated sourcecode */
                   <li class="highlight css-el">
                   <i class="icon-move"></i>div {
                   <ol>
-                    <li class="highlight css-att">
-                      <i class="icon-move"></i> color: <span contenteditable class="user-input color">rgb(255,0,0)</span>;
-                      <!--<input class="color" value="66FF00">-->
-                  </li>
-
                   <li class="highlight css-att">
-                      <i class="icon-move"></i> background-color: <span contenteditable class="user-input color">white</span>;
+                      <i class="icon-move"></i> background-color: <span contenteditable="" class="user-input color">paleturquoise</span>;
                       <!--<input class="color" value="66FF00">-->
                   </li>
-
-                  <!--li class="highlight css-att">
-                      <i class="icon-move"></i> background-color: <form><select name="bgcolordiv"><option value="red">red</option><option value="yellow">yellow</option></select></form>
-                      <span contenteditable class="user-input color">white</span>;
-                      <!--<input class="color" value="66FF00">--
-                  </li>-->
                   </ol>
                   }
+                  </li><li class="highlight css-el" style="">
+          <i class="icon-move"></i>.<span contenteditable="" class="user-input classname">bright</span> {
+          <ol>
+              <li class="highlight css-att">
+                      <i class="icon-move"></i> color: <span contenteditable="" class="user-input color">#FFFFFF</span>;<!--<input class="color" value="66FF00">-->
                   </li>
+          </ol>
+          <br>
+        }
+        </li><li class="highlight css-el" style="">
+          <i class="icon-move"></i>.<span contenteditable="" class="user-input classname">dark</span> {
+          <ol>
+            <li class="highlight css-att">
+                      <i class="icon-move"></i> color: <span contenteditable="" class="user-input color">#000000</span>;<!--<input class="color" value="66FF00">-->
+                  </li>
+          </ol>
+          <br>
+        }
+        </li><li class="highlight css-el" style="">
+          <i class="icon-move"></i>#<span contenteditable="" class="user-input idname">box1</span> {
+          <ol>
+            <li class="highlight css-att" style="">
+              <i class="icon-move"></i> height: <span contenteditable="" class="user-input dimension">200</span>px;
+            </li>
+            <li class="highlight css-att" style="">
+              <i class="icon-move"></i> width: <span contenteditable="" class="user-input dimension">100</span>px;
+            </li>
+                    <!-- REPLACE WITH ACTUAL FLOAT LATER --
+            <li class="highlight css-att" style="">
+              <i class="icon-move"></i> float: <span contenteditable="" class="user-input float">left</span>;
+            </li>
+
+            <li class="highlight css-att" style="">
+              <i class="icon-move"></i> display: <span contenteditable="" class="user-input display">inline-block</span>;
+            </li>-->
+
+
+
+
+      </ol>
+        }
+        </li><li class="highlight css-el" style="">
+          <i class="icon-move"></i>#<span contenteditable="" class="user-input idname">box2</span> {
+          <ol>
+            <li class="highlight css-att" style="">
+              <i class="icon-move"></i> width: <span contenteditable="" class="user-input dimension">200</span>px;
+            </li>
+            <li class="highlight css-att" style="">
+                  <i class="icon-move"></i> height: <span contenteditable="" class="user-input dimension">175</span>px;
+            </li>
+
+            <!-- REPLACE WITH ACTUAL FLOAT LATER --
+            <li class="highlight css-att" style="">
+              <i class="icon-move"></i> float: <span contenteditable="" class="user-input float">left</span>;
+            </li>
+
+                        <li class="highlight css-att" style="">
+              <i class="icon-move"></i> display: <span contenteditable="" class="user-input display">inline-block</span>;
+            </li>-->
+          </ol>
+        }
+        </li>
 
         
 
@@ -505,69 +525,72 @@ which updates the generated sourcecode */
             </li>
 
             <li class="">
-              <i class="icon-move"></i> &lt;h2&gt;<span contenteditable class="user-input heading">Hello there!</span>&lt;/h2&gt;
+              <i class="icon-move"></i> &lt;h4&gt;<span contenteditable="" class="user-input heading">I don't have a CSS id or class.</span>&lt;/h4&gt;
             </li>
 
             <li class="">
               <i class="icon-move"></i>
-              &lt;p&gt;
+              &lt;p class="dark"&gt;
               <ol>
                 <li class="">
-                  <i class="icon-move"></i><span contenteditable class="user-input p text">This is an example paragraph with some boring text. But here is a link to </span>
-                </li>
-
-                <li class="">
-                  <i class="icon-move"></i> &lt;a href="<span contenteditable class="user-input">http://www.google.com</span>" target="blank"&gt; <span contenteditable class="user-input link">Google</span>&lt;/a&gt;
-                </li>
-
-                <li class="">
-                  <i class="icon-move"></i><span contenteditable class="user-input p text">, if you are interested. </span>
+                  <i class="icon-move"></i><span contenteditable="" class="user-input p text">This is an example paragraph with some boring text. It belongs to the "dark" CSS class, and will also be affected by CSS changes to any element that it is inside of, like the body. </span>
                 </li>
 
               </ol>
               &lt;/p&gt;
             </li>
 
-            <li class="">
-              <i class="icon-move"></i> &lt;!-- <span contenteditable class="user-input comment">This is a comment. It won't show up in the web page display.</span> --&gt;
-            </li>
-
             <li>
-              <i class="icon-move"></i> &lt;div&gt;
+              <i class="icon-move"></i> &lt;div id="box1" class="bright" &gt;
               <ol>
 
-              <li>
-                <i class="icon-move"></i> &lt;h3&gt;<span contenteditable class="user-input heading">Some H3 text!</span>&lt;/h3&gt;
-              </li>
+              
 
-              <li>
+              <li style="" class="">
+                <i class="icon-move"></i> &lt;h3&gt;<span contenteditable="" class="user-input heading">Some H3 text!</span>&lt;/h3&gt;
+              </li><li>
               <i class="icon-move"></i> &lt;ul&gt;
               <ol>
                 <li class="">
-                  <i class="icon-move"></i> &lt;li&gt; <span contenteditable class="user-input li"> Apples </span>&lt;/li&gt;
+                  <i class="icon-move"></i> &lt;li&gt; <span contenteditable="" class="user-input li"> Apples </span>&lt;/li&gt;
                   <!--ol></ol-->
                 </li>
                 <li class="">
-                  <i class="icon-move"></i> &lt;li&gt;<span contenteditable class="user-input li"> Oranges </span>
+                  <i class="icon-move"></i> &lt;li&gt;<span contenteditable="" class="user-input li"> Oranges </span>
                   <!--ol></ol-->
                   &lt;/li&gt;
                 </li>
                 <li> 
-                  <i class="icon-move"></i> &lt;li&gt;<span contenteditable class="user-input li"> Pears </span>
+                  <i class="icon-move"></i> &lt;li&gt;<span contenteditable="" class="user-input li"> Pears </span>
                   <!--ol></ol-->
                   &lt;/li&gt;
                 </li>
               </ol>
               &lt;/ul&gt;
             </li>
+            </ol>
+              &lt;/div&gt;
+            </li>
+            
+            <li>
+              <i class="icon-move"></i> &lt;div id="box2" class="dark"&gt;
+              <ol>
+
+              <li>
+                <i class="icon-move"></i> &lt;p&gt;<span contenteditable="" class="user-input p text">Another really boring paragraph. Gosh I wish I had things to write about.</span>&lt;/p&gt;
+              </li>
+
           </ol>
               &lt;/div&gt;
               </li>
-            
+
+
+
             </ol>
           &lt;/body&gt;
         </li>
     </ol>
+    
 
     <!-- ---------- HTML SOURCE CODE ---------- -->
 
@@ -690,18 +713,6 @@ contenteditable spans. */
       return item.parent("ol")[0] == container.el[0]
     }
   },*/
-
-/* if any change happens in an element of .user-input class,
-call the onDrop function,
-which triggers the generated HTML source code to update,
-which then automatically updates the web page preview */
-
-$(".user-input").change(function(item, container, _super) {
-  $('#serialize_output').text(group.sortable("serialize").get().join(""))
-    _super(item, container)
-  },
-
-
   onDrop: function (item, container, _super) {
     $('#serialize_output').text(group.sortable("serialize").get().join(""))
     _super(item, container)
@@ -719,9 +730,6 @@ $("ol.simple_with_no_drag").sortable({
   item.dispose()
 }
 })
-
-
-
 
 
   </script>

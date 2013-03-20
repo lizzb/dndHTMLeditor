@@ -7,8 +7,13 @@
     <link href="http://johnny.github.com/jquery-sortable/css/vendor.css" rel="stylesheet">
     <link href="http://johnny.github.com/jquery-sortable/css/application.css" rel="stylesheet">
   
-  <script src="http://johnny.github.com/jquery-sortable/js/application.js"></script>
-  <script src="http://johnny.github.com/jquery-sortable/js/jquery-sortable-min.js"></script>
+  <!--script src="http://johnny.github.com/jquery-sortable/js/application.js"></script-->
+  
+  <!--script src="http://johnny.github.com/jquery-sortable/js/jquery-sortable-min.js"></script-->
+
+   <script src="johnny-application.js"></script>
+
+  <script src="jquery-sortable-johnny.js"></script>
 
   <script type="text/javascript" src="http://jscolor.com/jscolor/jscolor.js"></script>
 
@@ -444,13 +449,13 @@ which updates the generated sourcecode */
                   <li class="highlight css-att">
                       <i class="icon-move"></i> background-color: <!--<span contenteditable class="user-input color">#B2FFFF</span>;<!--<input class="color" value="66FF00">-->
 
-                      <input class="color" name="colorinput" value="66FF00">;
+                      <input class="user-input color" name="colorinput" value="94FFAD">;
 
                   </li>
 
                   <li class="highlight css-att">
                     <i class="icon-move"></i> font-family:"
-                    <select class="fontfam">
+                    <select class="user-input fontfam">
                       <option value="Arial">Arial</option>
                       <option value="Helvetica">Helvetica</option>
                       <option value="Arial Black">Arial Black</option>
@@ -591,7 +596,7 @@ Item 1,Item 3,Item 3,Item 4,Item 2,Item 5,Item 5,Item 6</pre>-->
 
   <style>                
     body {
-         background-color: #B2FFFF;
+         background-color: #94FFAD;
          font-family: "Palatino Linotype";
     }
 
@@ -695,11 +700,11 @@ contenteditable spans. */
 call the onDrop function,
 which triggers the generated HTML source code to update,
 which then automatically updates the web page preview */
-
+/*
 $(".user-input").change(function(item, container, _super) {
   $('#serialize_output').text(group.sortable("serialize").get().join(""))
     _super(item, container)
-  },
+  },*/
 
 
   onDrop: function (item, container, _super) {
@@ -711,13 +716,28 @@ $(".user-input").change(function(item, container, _super) {
   }
 })
 
+  // on keystroke changes, update the generated html source code!
+  // aka call serialize
+$('.user-input').live("keyup",function(){
+$('#serialize_output').text(group.sortable("serialize").get().join(""))
+})
+
+/*change for select, input, textarea elements
+correctly triggers serialize function,
+but still doesn't get the values of these elements  */
+$('.user-input').live("change",function(){
+$('#serialize_output').text(group.sortable("serialize").get().join(""))
+})
+
+
 $("ol.simple_with_no_drag").sortable({
-  group: 'no-drop',
-  drag: false,
-  onDrop: function (item, container, _super) {
-  // DELETE THE ITEM ....???
-  item.dispose()
+group: 'no-drop',
+drag: false,
+onDrop: function (item, container, _super) {
+// DELETE THE ITEM ....???
+item.dispose()
 }
+
 })
 
 
